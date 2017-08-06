@@ -1,12 +1,17 @@
 @import "normalize"
 @import "reset"
+@import "fonts"
 
+$rojo = #E62D35
+$oscuro = #3F3F49
+  
 body
   background-color darken(#fff, 5%)
+  font-family 'Lato', sans-serif
 
 //Utilities
 .a-activate
-  color red !important
+  color $rojo !important
 
 .u-wrapper
   width 90%
@@ -32,13 +37,16 @@ body
     background-color darken(gray, 20%)
 
 .btn-red
-  background-color darken(red, 30%)
+  background-color $rojo
 
   &:hover
-    background-color darken(red, 40%)
+    background-color darken($rojo, 20%)
 
 .btn-gray
-  background-color lighten(#1d1d1d, 20%)
+  background-color $oscuro
+  
+  &:hover
+    background-color darken($oscuro, 10%)
 
 // Styles
 .main__banner
@@ -51,7 +59,7 @@ body
   z-index 3
 
   &__content
-    background-color rgba(0, 0, 0, 0.1);
+    //background-color rgba(0, 0, 0, 0.1);
     width 450px
     margin-left 5rem
     margin-top 10rem
@@ -62,12 +70,12 @@ body
     color white
 
   &__promo__stars
-    color red
+    color $rojo
     font-weight 700
     margin-right 1rem
 
   &__promo__cta
-    margin-top 1rem
+    margin-top 1.3rem
 
   &__info
     font-weight 700
@@ -91,19 +99,28 @@ body
       box-shadow 0px 0px 20px rgba(0,0,0,0.3)
       border-radius 10px
       overflow hidden
+      position relative
+      
+      i
+        position absolute
+        left 1%
+        top 33.33%
+        color $oscuro
 
       input
         -webkit-appearance none
         -webkit-user-select none
         border 1px solid #fff
         width 100%
-        color lighten(gray, 10%)
+        color $oscuro
         font-weight 700
         padding 1rem
         border-radius 10px
+        margin-left 1rem
         
         &:focus
-          outline none
+          outline none        
+          
 
     
     .main__filters
@@ -113,7 +130,7 @@ body
         border-radius 5px
         color black !important
         padding .5rem 
-        background-color darken(white, 6%)
+        background-color #F2F3F5
         position relative
         
         &:after
@@ -123,7 +140,7 @@ body
           margin-right .3rem
           
         &:hover
-          background-color darken(white, 15%)
+          background-color darken(#F2F3F5, 5%)
 
     .main__browse
       padding 1rem
@@ -147,7 +164,7 @@ body
             transition .5s
             
             &:hover
-              color red
+              color $rojo
 
       h2
         text-transform uppercase
@@ -176,8 +193,12 @@ body
         
         &__secondary-info
           display flex
-          font-size .95rem
+          font-size .9rem
         
+        &__description
+          text-align justify
+          text-justify inter-word
+
         &__footer
           margin-top 1.2rem
           display flex                   
