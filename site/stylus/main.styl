@@ -65,6 +65,9 @@ body
     margin-top 10rem
     padding 1rem
     border-radius 1rem
+    
+    @media screen and (max-width: 550px)
+      margin-left 1rem
 
   &__promo__text, &__promo__details
     color white
@@ -84,15 +87,24 @@ body
   display flex
   margin-top 2rem
   margin-bottom 2rem
+  
+  @media screen and (max-width: 601px)
+    flex-direction column-reverse
 
   &__column
     width 100%
-
+        
     &:last-child
       margin-left 3rem
+      
+      @media screen and (max-width: 601px)
+        margin-left 0px
 
     &--mini
       max-width 200px
+      
+      @media screen and (max-width: 601px)
+        max-width 100%
 
     .main__search
       background-color white      
@@ -181,7 +193,13 @@ body
         width 32%
         border-radius 5px
         box-shadow 0 0 20px rgba(0,0,0,0.4)
-        margin-bottom 1rem        
+        margin-bottom 1rem
+        
+        @media screen and (max-width: 1305px)
+          width 49%
+          
+        @media screen and (max-width: 900px)
+          width 100%
         
         &__img-container
           img
@@ -194,6 +212,12 @@ body
         &__secondary-info
           display flex
           font-size .9rem
+          
+          @media screen and (max-width: 1305px)
+            font-size 1.1rem
+            
+          @media screen and (max-width: 1305px)
+            font-size 0.9rem
         
         &__description
           text-align justify
@@ -201,7 +225,8 @@ body
 
         &__footer
           margin-top 1.2rem
-          display flex                   
+          display flex
+          justify-content center               
           
           .btn 
             display block
@@ -209,6 +234,7 @@ body
             width 100%
             text-align center
             margin 0
+            border-radius 5px
             
             &:first-child
               margin-right 1rem
@@ -222,6 +248,18 @@ body
 .header
   display flex
   justify-content space-between
+  
+  &__burger
+    display none
+    color $rojo
+    font-size 2rem
+    
+    @media screen and (max-width: 550px)
+      display block
+      
+    &--link
+      @media screen and (max-width: 550px)
+        z-index 100      
 
   &__column
     display flex
@@ -233,10 +271,25 @@ body
       width 100%
 
   &__left__menu
+    @media screen and (max-width: 550px)
+      //display none
+      background-color rgba(0,0,0,0.5)
+      position absolute
+      right 0
+      top 0
+      right 0
+      height 100%
+      z-index 10
+      padding-top 2.2rem
+    
     ul
       li
         display inline-block
         margin-right 1rem
+        
+        @media screen and (max-width: 550px)
+          display block
+          margin-bottom 1rem
 
         &:last-child
           margin 0
@@ -244,6 +297,9 @@ body
         a
           color white
           transition .5s
+          
+          @media screen and (max-width: 550px)
+            font-size 1.5rem
 
           &:hover
             color darken(white, 10%)
@@ -253,6 +309,9 @@ body
     display flex
     align-items center
     color white
+    
+    @media screen and (max-width: 550px)
+      display none
 
     &__avatar
       height 40px
